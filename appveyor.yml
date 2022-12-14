@@ -1,17 +1,15 @@
 image: Visual Studio 2019
-platform:
-	- x64
-configuration:
-	- Release
+platform: x64
+configuration: Release
 
 shallow_clone: true
 
 init:
-	- git clone --branch=master https://github.com/coin-or/Cbc 2>&1 | % { $_.ToString() }
-	- git clone --branch=master https://github.com/coin-or/Clp
-	- git clone --branch=master https://github.com/coin-or/Cgl
-	- git clone --branch=master https://github.com/coin-or/Osi
-	- git clone --branch=master https://github.com/coin-or/CoinUtils
+- git clone --branch=master https://github.com/coin-or/Cbc 2>&1 | % { $_.ToString() }
+- git clone --branch=master https://github.com/coin-or/Clp
+- git clone --branch=master https://github.com/coin-or/Cgl
+- git clone --branch=master https://github.com/coin-or/Osi
+- git clone --branch=master https://github.com/coin-or/CoinUtils
 
 build:
     project: .\CoinMP\v10\MSVisualStudio\CoinMP.sln
