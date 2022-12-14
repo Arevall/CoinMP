@@ -25,6 +25,6 @@ install:
   - C:\msys64\usr\bin\bash -lc ""
 
 build_script:
-  - C:\msys64\usr\bin\bash -lc "cd C:\projects; ln -s %APPVEYOR_PROJECT_SLUG% %APPVEYOR_PROJECT_NAME%; wget https://raw.githubusercontent.com/coin-or/coinbrew/master/coinbrew"
+  - C:\msys64\usr\bin\bash -lc "cd C:\projects; ln -s %APPVEYOR_PROJECT_SLUG% %APPVEYOR_PROJECT_NAME%; wget https://raw.githubusercontent.com/coin-or/coinbrew/v1.0/coinbrew"
   - C:\msys64\usr\bin\bash -lc "cd C:\projects; ./coinbrew fetch https://github.com/%APPVEYOR_REPO_NAME%@%APPVEYOR_REPO_BRANCH% --no-prompt --skip="ThirdParty/Blas ThirdParty/Lapack" --skip-update --verbosity 4"
   - C:\msys64\usr\bin\bash -lc "cd C:\projects; export PATH=$ADD_PATH:$PATH; ./coinbrew build %APPVEYOR_PROJECT_NAME% --debug --no-prompt --no-third-party --build=x86_64-w64-mingw32 $HOST_ARCH_ARG --verbosity 4 --tests main"
