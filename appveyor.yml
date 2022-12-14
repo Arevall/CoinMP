@@ -5,13 +5,13 @@ configuration: Release
 shallow_clone: true
 
 init:
-echo "Collecting repos"
+- echo 'Collecting repos'
 - git clone --branch=master https://github.com/coin-or/Cbc
 - git clone --branch=master https://github.com/coin-or/Clp
 - git clone --branch=master https://github.com/coin-or/Cgl
 - git clone --branch=master https://github.com/coin-or/Osi
 - git clone --branch=master https://github.com/coin-or/CoinUtils
-echo $(ls)
+- echo $(ls)
 
 build:
     project: .\CoinMP\v10\MSVisualStudio\CoinMP.sln
