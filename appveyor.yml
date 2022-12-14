@@ -5,7 +5,7 @@ configuration: Release
 shallow_clone: true
 
 init:
-- git clone --branch=master https://github.com/coin-or/Cbc 2>&1 | % { $_.ToString() }
+- git clone --branch=master https://github.com/coin-or/Cbc
 - git clone --branch=master https://github.com/coin-or/Clp
 - git clone --branch=master https://github.com/coin-or/Cgl
 - git clone --branch=master https://github.com/coin-or/Osi
