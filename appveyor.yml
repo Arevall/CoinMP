@@ -9,13 +9,12 @@ environment:
       ADD_PATH: /mingw64/bin
       
 install:
-  - curl -LO %GNOME_BASE%/dependencies/pkg-config_0.26-1_win32.zip
-  - curl -LO %GNOME_BASE%/glib/2.28/glib_2.28.8-1_win32.zip
-  - curl -LO %GNOME_BASE%/dependencies/gettext-runtime_0.18.1.1-2_win32.zip
+  - curl -O http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/pkg-config_0.26-1_win32.zip
+  - curl -O http://ftp.gnome.org/pub/gnome/binaries/win32/glib/2.28/glib_2.28.8-1_win32.zip
+  - curl -O http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/gettext-runtime_0.18.1.1-2_win32.zip
   - 7z x -y pkg-config_0.26-1_win32.zip -oC:\pkg-config > nul
   - 7z x -y glib_2.28.8-1_win32.zip -oC:\pkg-config > nul
   - 7z x -y gettext-runtime_0.18.1.1-2_win32.zip -oC:\pkg-config > nul
-  
   
   - for /f "delims=" %%i in ('C:\msys64\usr\bin\bash -lc "if [ $APPVEYOR_REPO_BRANCH = 'master' ]; then echo 'master'; else echo $APPVEYOR_REPO_BRANCH | cut -d "/" -f 2; fi"') do set VERSION=%%i
   - IF %ARCH%==win32-msvc14 (CALL C:\"Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat")
