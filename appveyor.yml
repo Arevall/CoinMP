@@ -25,4 +25,6 @@ build:
     project: .\CoinMP\MSVisualStudio\v16\CoinMP.sln
     
 test:
-    assemblies: **\x64\Release\UnitTestMSVS.dll
+    assemblies: 
+       only:  
+          - '**\x64\Release\UnitTestMSVS.dll'
