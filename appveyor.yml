@@ -16,4 +16,4 @@ before_build:
 
 
 build:
-    project: .\CoinMP\MSVisualStudio\v17\CoinMP.sln
+    project: .\CoinMP\MSVisualStudio\v16\CoinMP.sln
