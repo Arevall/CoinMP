@@ -7,19 +7,19 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoinMP", "CoinMP\CoinMP.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "unitTest", "unitTest\unitTest.vcxproj", "{9F2D36EA-6D9E-42CB-A648-BCC0CB3E68E6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libCbc", "..\..\..\cbc\MSVisualStudio\v17\libCbc\libCbc.vcxproj", "{0B054D74-6082-452F-9744-5FBE12C7D476}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libCbc", "..\..\..\cbc\MSVisualStudio\v16\libCbc\libCbc.vcxproj", "{0B054D74-6082-452F-9744-5FBE12C7D476}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libCbcSolver", "..\..\..\cbc\MSVisualStudio\v17\libCbcSolver\libCbcSolver.vcxproj", "{5A9043A5-CB87-4E2B-807C-74830BFFAE39}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libCbcSolver", "..\..\..\cbc\MSVisualStudio\v16\libCbcSolver\libCbcSolver.vcxproj", "{5A9043A5-CB87-4E2B-807C-74830BFFAE39}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libCgl", "..\..\..\cgl\MSVisualStudio\v17\libCgl\libCgl.vcxproj", "{1E645A44-00EF-4093-9F6A-1D082BD43BDB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libCgl", "..\..\..\cgl\MSVisualStudio\v16\libCgl\libCgl.vcxproj", "{1E645A44-00EF-4093-9F6A-1D082BD43BDB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libClp", "..\..\..\clp\MSVisualStudio\v17\libClp\libClp.vcxproj", "{768B67D6-E6D3-4A8F-AA61-511FDBCE7937}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libClp", "..\..\..\clp\MSVisualStudio\v16\libClp\libClp.vcxproj", "{768B67D6-E6D3-4A8F-AA61-511FDBCE7937}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libCoinUtils", "..\..\..\coinutils\MSVisualStudio\v17\libCoinUtils\libCoinUtils.vcxproj", "{6D2EF92A-D693-47E3-A325-A686E78C5FFD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libCoinUtils", "..\..\..\coinutils\MSVisualStudio\v16\libCoinUtils\libCoinUtils.vcxproj", "{6D2EF92A-D693-47E3-A325-A686E78C5FFD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libOsi", "..\..\..\osi\MSVisualStudio\v17\libOsi\libOsi.vcxproj", "{BF5C7532-EE0A-479B-9993-72134087D530}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libOsi", "..\..\..\osi\MSVisualStudio\v16\libOsi\libOsi.vcxproj", "{BF5C7532-EE0A-479B-9993-72134087D530}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libOsiClp", "..\..\..\clp\MSVisualStudio\v17\libOsiClp\libOsiClp.vcxproj", "{79433425-EC16-410F-9B91-8D31D2109C90}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libOsiClp", "..\..\..\clp\MSVisualStudio\v16\libOsiClp\libOsiClp.vcxproj", "{79433425-EC16-410F-9B91-8D31D2109C90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
