@@ -22,7 +22,13 @@ before_build:
 - git -C Osi pull       || git clone --branch=master https://github.com/coin-or/Osi
 - git -C CoinUtils pull || git clone --branch=master https://github.com/coin-or/CoinUtils
 - git -C Cgl pull       || git clone --branch=master https://github.com/coin-or/Cgl
-- ps: Move-Item -Path C:\projects\pdbfiles -Filter *.pdb -Destination C:\projects\coinmp\Coinmp\MSVisualStudio\v16\x64\Release -Verbose
+- ps: |    
+    if (Test-Path -Path C:\projects\pdbfiles) {
+    Move-Item -Path C:\projects\pdbfiles -Filter *.pdb -Destination 
+    C:\projects\coinmp\Coinmp\MSVisualStudio\v16\x64\Release -Verbose
+    } else {
+    New-Item -ItemType Directory -Path .\newitem
+    }
 
 build:
     project: .\CoinMP\MSVisualStudio\v16\CoinMP.sln
