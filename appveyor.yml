@@ -4,7 +4,8 @@ configuration: Release
 
 shallow_clone: true
 
-init: mkdir C:\projects\coinmp\Coinmp\MSVisualStudio\v16\x64\Release\
+init:
+
 
 cache:
 - C:\projects\coinmp\Cbc\
@@ -12,7 +13,7 @@ cache:
 - C:\projects\coinmp\Osi\
 - C:\projects\coinmp\CoinUtils\
 - C:\projects\coinmp\Cgl\
-- C:\projects\coinmp\Coinmp\MSVisualStudio\v16\x64\Release\*.pdb
+- C:\projects\pdbfiles
 
 
 before_build:
@@ -27,7 +28,7 @@ before_build:
     Move-Item -Path C:\projects\pdbfiles -Filter *.pdb -Destination 
     C:\projects\coinmp\Coinmp\MSVisualStudio\v16\x64\Release -Verbose
     } else {
-    New-Item -ItemType Directory -Path .\newitem
+    New-Item -ItemType Directory -Path C:\projects\pdbfiles
     }
 
 build:
