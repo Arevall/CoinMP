@@ -15,11 +15,11 @@ cache:
 
 before_build:
 - echo 'Collecting repos'
-- git clone --branch=master https://github.com/coin-or/Cbc
-- git clone --branch=master https://github.com/coin-or/Clp
-- git clone --branch=master https://github.com/coin-or/Osi
-- git clone --branch=master https://github.com/coin-or/CoinUtils
-- git clone --branch=master https://github.com/coin-or/Cgl
+- git -C Cbc pull       || git clone --branch=master https://github.com/coin-or/Cbc
+- git -C Clp pull       || git clone --branch=master https://github.com/coin-or/Clp
+- git -C Osi pull       || git clone --branch=master https://github.com/coin-or/Osi
+- git -C CoinUtils pull || git clone --branch=master https://github.com/coin-or/CoinUtils
+- git -C Cgl pull       || git clone --branch=master https://github.com/coin-or/Cgl
 
 build:
     project: .\CoinMP\MSVisualStudio\v16\CoinMP.sln
