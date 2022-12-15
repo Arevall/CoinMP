@@ -13,4 +13,4 @@ before_build:
 - ls
 
 build:
-    project: .\CoinMP\v10\MSVisualStudio\CoinMP.sln
+    project: .\CoinMP\MSVisualStudio\v10\CoinMP.sln
