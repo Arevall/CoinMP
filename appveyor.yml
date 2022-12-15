@@ -13,6 +13,7 @@ cache:
 - C:\projects\coinmp\CoinUtils\
 - C:\projects\coinmp\Cgl\
 - C:\projects\coinmp\Coinmp\MSVisualStudio\v16\x64\Release\*.pdb
+- C:\projects\pdbfiles\
 
 before_build:
 - echo 'Collecting repos'
@@ -21,10 +22,14 @@ before_build:
 - git -C Osi pull       || git clone --branch=master https://github.com/coin-or/Osi
 - git -C CoinUtils pull || git clone --branch=master https://github.com/coin-or/CoinUtils
 - git -C Cgl pull       || git clone --branch=master https://github.com/coin-or/Cgl
+- mv -v C:\projects\pdbfiles\*.pdb C:\projects\coinmp\Coinmp\MSVisualStudio\v16\x64\Release\
 
 build:
     project: .\CoinMP\MSVisualStudio\v16\CoinMP.sln
     
+after_build:
+- mv -v C:\projects\coinmp\Coinmp\MSVisualStudio\v16\x64\Release\*.pdb C:\projects\pdbfiles\
+
 test:
     assemblies: 
        only:  
