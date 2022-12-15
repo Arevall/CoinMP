@@ -5,6 +5,15 @@ configuration: Release
 shallow_clone: true
 
 init:
+
+cache:
+- C:\projects\coinmp\Cbc\
+- C:\projects\coinmp\Clp\
+- C:\projects\coinmp\Osi\
+- C:\projects\coinmp\CoinUtils\
+- C:\projects\coinmp\Cgl\
+
+before_build:
 - echo 'Collecting repos'
 - git clone --branch=master https://github.com/coin-or/Cbc
 - git clone --branch=master https://github.com/coin-or/Clp
@@ -12,8 +21,8 @@ init:
 - git clone --branch=master https://github.com/coin-or/CoinUtils
 - git clone --branch=master https://github.com/coin-or/Cgl
 
-before_build:
-
-
 build:
     project: .\CoinMP\MSVisualStudio\v16\CoinMP.sln
+    
+test:
+    assemblies: **\x64\Release\UnitTestMSVS.dll
