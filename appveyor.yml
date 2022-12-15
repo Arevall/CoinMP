@@ -9,7 +9,6 @@ init:
 - git clone --branch=master https://github.com/coin-or/Cbc
 - git clone --branch=master https://github.com/coin-or/Clp
 - git clone --branch=master https://github.com/coin-or/Osi
-- git clone --branch=master https://github.com/coin-or/Cbc
 - git clone --branch=master https://github.com/coin-or/CoinUtils
 - git clone --branch=master https://github.com/coin-or/Cgl
 
