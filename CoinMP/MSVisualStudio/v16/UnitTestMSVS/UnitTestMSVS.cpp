@@ -80,10 +80,10 @@ namespace UnitTestMSVS
 			}
 		}
 		fprintf(stdout, "---------------------------------------\n\n");
-		assert(solutionStatus==0);
-		assert(strcmp(solutionText,"Optimal solution found")==0);
+		Assert::AreEqual(solutionStatus,0);
+		Assert::AreEqual(solutionText, "Optimal solution found");
 		if (optimalValue != 0.0) {
-			assert( fabs(objectValue-optimalValue) < 0.001 );
+			Assert::IsTrue( fabs(objectValue-optimalValue) < 0.001 );
 		}
 	}
 
