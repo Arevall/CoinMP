@@ -1,30 +1,19 @@
-platform:
-  - x64
+image: Visual Studio 2019
+platform: x64
+configuration: Release
 
-environment:
-  matrix:
-    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-      ARCH: win32-msvc16
-      HOST_ARCH_ARG: --enable-msvc=MD
-      ADD_PATH: /mingw64/bin
-      
-install:
-  - curl -LO "http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/pkg-config_0.26-1_win32.zip"
-  - curl -LO "http://ftp.gnome.org/pub/gnome/binaries/win32/glib/2.28/glib_2.28.8-1_win32.zip"
-  - curl -LO "http://ftp.gnome.org/pub/gnome/binaries/win32/dependencies/gettext-runtime_0.18.1.1-2_win32.zip"
-  - 7z x -y pkg-config_0.26-1_win32.zip -oC:\pkg-config > nul
-  - 7z x -y glib_2.28.8-1_win32.zip -oC:\pkg-config > nul
-  - 7z x -y gettext-runtime_0.18.1.1-2_win32.zip -oC:\pkg-config > nul
-  
-  - for /f "delims=" %%i in ('C:\msys64\usr\bin\bash -lc "if [ $APPVEYOR_REPO_BRANCH = 'master' ]; then echo 'master'; else echo $APPVEYOR_REPO_BRANCH | cut -d "/" -f 2; fi"') do set VERSION=%%i
-  - IF %ARCH%==win32-msvc14 (CALL C:\"Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat")
-  - IF %ARCH%==win32-msvc15 (CALL C:\"Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x64)
-  - IF %ARCH%==win32-msvc16 (CALL C:\"Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" x64)
-  - IF %ARCH%==x86_64-w64-mingw32 (CALL C:\msys64\usr\bin\bash -lc "pacman -S mingw-w64-x86_64-lapack --noconfirm")
-  - IF %ARCH%==i686-w64-mingw32 (CALL C:\msys64\usr\bin\bash -lc "pacman -S mingw-w64-i686-lapack --noconfirm")  
-  - C:\msys64\usr\bin\bash -lc ""
+shallow_clone: true
 
-build_script:
-  - C:\msys64\usr\bin\bash -lc "cd C:\projects; ln -s %APPVEYOR_PROJECT_SLUG% %APPVEYOR_PROJECT_NAME%; wget https://raw.githubusercontent.com/coin-or/coinbrew/master/coinbrew"
-  - C:\msys64\usr\bin\bash -lc "cd C:\projects; ./coinbrew fetch https://github.com/%APPVEYOR_REPO_NAME%:%APPVEYOR_REPO_BRANCH% --no-prompt --skip="ThirdParty/Blas ThirdParty/Lapack" --skip-update --verbosity 4"
-  - C:\msys64\usr\bin\bash -lc "cd C:\projects; export PATH=$ADD_PATH:$PATH; ./coinbrew build %APPVEYOR_PROJECT_NAME% --no-prompt --no-third-party --build=x86_64-w64-mingw32 $HOST_ARCH_ARG --verbosity 4 --tests main"
+init:
+- echo 'Collecting repos'
+- git clone --branch=master https://github.com/coin-or/Cbc
+- git clone --branch=master https://github.com/coin-or/Clp
+- git clone --branch=master https://github.com/coin-or/Osi
+- git clone --branch=master https://github.com/coin-or/CoinUtils
+- git clone --branch=master https://github.com/coin-or/Cgl
+
+before_build:
+
+
+build:
+    project: .\CoinMP\MSVisualStudio\v17\CoinMP.sln
