@@ -12,6 +12,7 @@ cache:
 - C:\projects\coinmp\Osi\
 - C:\projects\coinmp\CoinUtils\
 - C:\projects\coinmp\Cgl\
+- C:\projects\coinmp\Coinmp\MSVisualStudio\v16\x64\Release\*.pdb
 
 before_build:
 - echo 'Collecting repos'
