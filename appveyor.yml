@@ -9,6 +9,8 @@ init:
 - git clone --branch=master https://github.com/coin-or/Cbc
 - ls
 
+before_build:
+- ls
+
 build:
-    - ls
     project: .\CoinMP\v10\MSVisualStudio\CoinMP.sln
