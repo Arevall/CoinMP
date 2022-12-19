@@ -4,7 +4,7 @@ configuration: Release
 
 shallow_clone: true
 
-init:
+init: mkdir C:\projects\coinmp\Coinmp\MSVisualStudio\v16\x64\Release\
 
 
 cache:
@@ -13,6 +13,7 @@ cache:
 - C:\projects\coinmp\Osi\
 - C:\projects\coinmp\CoinUtils\
 - C:\projects\coinmp\Cgl\
+- C:\projects\pdbfiles\
 
 
 before_build:
@@ -22,11 +23,19 @@ before_build:
 - git -C Osi pull       || git clone --branch=master https://github.com/coin-or/Osi
 - git -C CoinUtils pull || git clone --branch=master https://github.com/coin-or/CoinUtils
 - git -C Cgl pull       || git clone --branch=master https://github.com/coin-or/Cgl
+- ps: |    
+    if (Test-Path -Path C:\projects\pdbfiles) {
+    Move-Item -Path C:\projects\pdbfiles -Filter *.pdb -Destination 
+    C:\projects\coinmp\Coinmp\MSVisualStudio\v16\x64\Release -Verbose
+    } else {
+    New-Item -ItemType Directory -Path C:\projects\pdbfiles
+    }
 
 build:
     project: .\CoinMP\MSVisualStudio\v16\CoinMP.sln
     
 after_build:
+- ps: Move-Item -Path C:\projects\coinmp\Coinmp\MSVisualStudio\v16\x64\Release -Filter *.pdb -Destination C:\projects\pdbfiles -Verbose
 
 test:
     assemblies: 
