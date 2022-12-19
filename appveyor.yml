@@ -39,4 +39,4 @@ after_build:
 test:
     assemblies: 
        only:  
-          - C:\projects\coinmp\Coinmp\MSVisualStudio\v16\x64\Release\UnitTestMSVS.dll
+          - Coinmp\MSVisualStudio\v16\x64\Release\UnitTestMSVS.dll
